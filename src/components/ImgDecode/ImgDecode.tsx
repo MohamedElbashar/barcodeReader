@@ -9,7 +9,7 @@ export default class ImgDecode extends Component {
     "https://i.ibb.co/FVCmS6g/seq-10-camera-7.jpg";
     try {
       const reader = await this.pReader;
-      let results = await reader.decode(e.target.files[0]);
+      let results = await reader.decode(e.target.files![0]);
       for (let result of results) {
         alert(result.barcodeText);
       }
