@@ -6,11 +6,10 @@ export default class ImgDecode extends Component {
   pReader: Promise<BarcodeReader> = BarcodeReader.createInstance();
 
   decodeImg = async (e: ChangeEvent<HTMLInputElement>) => {
+    "https://i.ibb.co/FVCmS6g/seq-10-camera-7.jpg";
     try {
       const reader = await this.pReader;
-      let results = await reader.decode(
-        "https://i.ibb.co/FVCmS6g/seq-10-camera-7.jpg"
-      );
+      let results = await reader.decode(e.target.files[0]);
       for (let result of results) {
         alert(result.barcodeText);
       }
